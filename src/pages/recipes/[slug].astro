@@ -14,9 +14,14 @@ export async function getStaticPaths() {
 const { recipe } = Astro.props;
 const { Content } = await render(recipe);
 const galleryItems = await getRecipeMedia(recipe.slug);
+const socialImage = galleryItems.find((item) => item.kind === "image")?.url;
 ---
 
-<Layout title={`${recipe.data.title} | Alasdair's Well-Fed Kitchen`} description={recipe.data.summary ?? recipe.data.title}>
+<Layout
+  title={`${recipe.data.title} | Alasdair's Well-Fed Kitchen`}
+  description={recipe.data.summary ?? recipe.data.title}
+  socialImage={socialImage}
+>
   <header class="site-header recipe-header">
     <div>
       <p class="badge">{recipe.data.category}</p>

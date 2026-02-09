@@ -8,6 +8,7 @@ import "../styles/global.css";
 const {
   title = "Alasdair's Well-Fed Kitchen",
   description = "A small, local-first collection of go-to recipes.",
+  socialImage,
 } = Astro.props;
 ---
 
@@ -20,6 +21,14 @@ const {
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content={socialImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
     <title>{title}</title>
   </head>
   <body>
