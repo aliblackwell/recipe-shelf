@@ -38,6 +38,14 @@ const equipment = ["Spiraliser", "Food processor", "Air fryer", "Cloche"];
     <span class="tagline">{recipes.length} recipes</span>
   </header>
 
+  <section class="section">
+ 
+    <p>
+      So said my Grandfather. I hope you enjoy these recipes and end up feeling flippety-floppety too. Works in progress. Contact me for details or tips on
+      any of them. Enjoy!
+    </p>
+  </section>
+
   {
     categoryOrder.map((category) => {
       const items = byCategory[category] ?? [];
@@ -75,5 +83,4 @@ const equipment = ["Spiraliser", "Food processor", "Air fryer", "Cloche"];
     </div>
   </section>
 
-  <p class="footer-note">Running locally first, ready to extend anytime.</p>
 </Layout>

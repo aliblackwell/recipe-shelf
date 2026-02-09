@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { getRecipeMedia } from "../../lib/recipeMedia";
 
 export async function getStaticPaths() {
   const recipes = await getCollection("recipes");
@@ -12,16 +13,17 @@ export async function getStaticPaths() {
 
 const { recipe } = Astro.props;
 const { Content } = await render(recipe);
+const galleryItems = await getRecipeMedia(recipe.slug);
 ---
 
 <Layout title={`${recipe.data.title} | Alasdair's Well-Fed Kitchen`} description={recipe.data.summary ?? recipe.data.title}>
-  <header class="site-header">
+  <header class="site-header recipe-header">
     <div>
       <p class="badge">{recipe.data.category}</p>
       <h1 class="site-title">{recipe.data.title}</h1>
-      {recipe.data.summary && <p class="site-subtitle">{recipe.data.summary}</p>}
+      {recipe.data.summary && <p class="site-subtitle recipe-description">{recipe.data.summary}</p>}
     </div>
-    <a class="tagline" href="/">Back to all recipes</a>
+    <a class="tagline recipe-back-link" href="/">Back to all recipes</a>
   </header>
 
   <div class="recipe-meta">
@@ -29,6 +31,26 @@ const { Content } = await render(recipe);
     {recipe.data.yield && <span>Yield: {recipe.data.yield}</span>}
     {recipe.data.tags.length > 0 && <span>{recipe.data.tags.join(" • ")}</span>}
   </div>
+
+  {
+    galleryItems.length > 0 && (
+      <section class="section">
+        <div class="media-gallery">
+          {galleryItems.map((item, index) => (
+            <figure class="media-item">
+              {item.kind === "image" ? (
+                <img src={item.url} alt={`${recipe.data.title} photo ${index + 1}`} loading="lazy" decoding="async" />
+              ) : (
+                <video controls preload="metadata" playsinline>
+                  <source src={item.url} />
+                </video>
+              )}
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
 
   <article class="recipe-content">
     <Content />

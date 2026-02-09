@@ -1,27 +1,36 @@
 ---
-title: "Coronation crumpet"
-summary: "Soft, airy crumpets made for slow mornings."
+title: "Coronation Crumpet"
+summary: "A giant, pan-sized Crumpet born on the Glorious Occasion of King Charles III's Coronation."
 category: "Breads"
 time: "2 hours"
-yield: "8 crumpets"
+yield: "1 giant crumpet"
 tags: ["crumpet"]
 ---
 
 ## Overview
-This is the placeholder for the coronation crumpet method. Flesh out the batter ratio and cooking notes.
+This crumpet was invented on the happy day of King Charles III's Coronation.
+
+Throw away your crumpet rings. This bad boy is the size of a frying pan.
+
+Think of it as a crumpet the size of a pizza. Imagine.
+
+One day I will start a cafe selling these and only these.
 
 ## Ingredients
-- Flour
-- Water or milk
-- Yeast
-- Salt
-- A touch of sugar
+- 120% hydration batter
+- 200g flour (makes one crumpet)
+- Half a teaspoon of salt
+- Half a teaspoon of baking powder
+- One teaspoon of sugar
 
-## Steps
-1. Whisk the batter until smooth and bubbly.
-2. Rest until well aerated.
-3. Cook in greased rings over medium heat.
-4. Flip briefly to set the tops.
-
-## Notes
-- Add your preferred hydration and proofing times here.
+## Method
+1. Pour deflated starter into a mixing bowl, weigh it, and divide by two.
+2. Add flour up to 200g, factoring in the starter.
+3. Add water to 120% hydration, factoring in the starter.
+4. Add salt and sugar.
+5. Mix well and leave to rest for thirty minutes.
+6. Add baking powder.
+7. Gently heat a large pan and grease with some vegetable oil or butter over low heat.
+8. Pour in the mix.
+9. Once the top has set, turn off the heat.
+10. Toast under a grill before enjoying.
