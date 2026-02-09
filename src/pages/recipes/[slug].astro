@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const recipes = await getCollection("recipes");
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.slug },
+    props: { recipe },
+  }));
+}
+
+const { recipe } = Astro.props;
+const { Content } = await render(recipe);
+---
+
+<Layout title={`${recipe.data.title} | Recipe Shelf`} description={recipe.data.summary ?? recipe.data.title}>
+  <header class="site-header">
+    <div>
+      <p class="badge">{recipe.data.category}</p>
+      <h1 class="site-title">{recipe.data.title}</h1>
+      {recipe.data.summary && <p class="site-subtitle">{recipe.data.summary}</p>}
+    </div>
+    <a class="tagline" href="/">Back to all recipes</a>
+  </header>
+
+  <div class="recipe-meta">
+    {recipe.data.time && <span>Time: {recipe.data.time}</span>}
+    {recipe.data.yield && <span>Yield: {recipe.data.yield}</span>}
+    {recipe.data.tags.length > 0 && <span>{recipe.data.tags.join(" • ")}</span>}
+  </div>
+
+  <article class="recipe-content">
+    <Content />
+  </article>
+</Layout>

@@ -4,11 +4,15 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:host": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
+    "preview:host": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/alegreya": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "astro": "^5.17.1"
   }
 }
