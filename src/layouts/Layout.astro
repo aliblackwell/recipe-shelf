@@ -6,7 +6,7 @@ import "@fontsource/space-grotesk/600.css";
 import "../styles/global.css";
 
 const {
-  title = "Alasdair's Recipe Shelf",
+  title = "Alasdair's Well-Fed Kitchen",
   description = "A small, local-first collection of go-to recipes.",
 } = Astro.props;
 ---
@@ -24,6 +24,10 @@ const {
   </head>
   <body>
     <main>
+      <a class="brand-logo" href="/" aria-label="BlackwellFed home">
+        <span class="brand-logo-mark">AJ</span>
+        <span class="brand-logo-text">BlackwellFed</span>
+      </a>
       <slot />
     </main>
   </body>

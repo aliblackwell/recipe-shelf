@@ -14,7 +14,7 @@ const { recipe } = Astro.props;
 const { Content } = await render(recipe);
 ---
 
-<Layout title={`${recipe.data.title} | Recipe Shelf`} description={recipe.data.summary ?? recipe.data.title}>
+<Layout title={`${recipe.data.title} | Alasdair's Well-Fed Kitchen`} description={recipe.data.summary ?? recipe.data.title}>
   <header class="site-header">
     <div>
       <p class="badge">{recipe.data.category}</p>
